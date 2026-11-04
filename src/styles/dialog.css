@@ -1,0 +1,26 @@
+.pdialog { padding: 0; border: 0; background: transparent; width: min(56rem, calc(100% - 1.5rem)); max-width: none; max-height: calc(100dvh - 1.5rem); margin: auto; color: var(--text); overflow: visible; }
+.pdialog::backdrop { background: rgba(42, 20, 14, 0.62); }
+.pdialog[open] { animation: pd-in 0.35s var(--ease); }
+@keyframes pd-in { from { opacity: 0; transform: translateY(16px); } }
+.pdialog__sheet { position: relative; background: var(--ivory); border-radius: 0.5rem; max-height: calc(100dvh - 1.5rem); overflow-y: auto; overscroll-behavior: contain; display: grid; }
+.pdialog__close { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2; width: 2.75rem; height: 2.75rem; border-radius: 50%; border: 0; background: var(--cream); color: var(--choc); display: grid; place-items: center; }
+.pdialog__close:hover { background: var(--choc); color: var(--cream); }
+.pdialog__content { display: grid; }
+.pdialog__media { aspect-ratio: 4 / 3; position: relative; }
+.pdialog__body { padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem) 2rem; display: grid; gap: 0.9rem; align-content: start; }
+.pdialog__cat { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+.pdialog__title { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.pdialog__price { font-family: var(--font-display); font-size: 1.5rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.25rem 0.5rem; }
+.pdialog__unit { font-family: var(--font-body); font-size: 0.9rem; color: var(--muted); }
+.pdialog__demo { font-family: var(--font-body); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; border: 1px solid var(--terracotta); color: var(--terracotta); padding: 0.1rem 0.5rem; border-radius: 999px; }
+.pdialog__desc { color: var(--choc-soft); }
+.pdialog__info { display: grid; gap: 0.75rem; }
+.pdialog__info dt { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.allergens { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.3rem; }
+.allergens li { background: var(--blush); padding: 0.15rem 0.75rem; border-radius: 999px; font-size: 0.88rem; }
+.pdialog__ask { justify-self: start; margin-top: 0.5rem; }
+@media (min-width: 48rem) {
+  .pdialog__content { grid-template-columns: 0.95fr 1.05fr; min-height: 32rem; }
+  .pdialog__media { aspect-ratio: auto; }
+  .pdialog__body { padding-top: 3.5rem; }
+}
